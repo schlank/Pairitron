@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Pairitron</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="start_or_stop">Start/Stop</string>
+
+    <string name="dialog_edit_header_hint">header</string>
+    <string name="dialog_edit_footer_hint">footer</string>
+
+    <string name="button_start">start</string>
+    <string name="button_stop">stop</string>
+    <string name="button_pause">pause</string>
+    <string name="button_reset">reset</string>
+
+    <string name="pair_prompt">Choose a pair</string>
+
+    <string-array name="pair_list">
+        <item>Phil Leder</item>
+        <item>Jon Kennedy</item>
+        <item>Tom Jones</item>
+        <item>Stephen Dubois</item>
+        <item>Will Kamp</item>
+        <item>Diana</item>
+        <item>Vinaya</item>
+        <item>John Terrill</item>
+        <item>Hexar Anderson</item>
+    </string-array>
+</resources>

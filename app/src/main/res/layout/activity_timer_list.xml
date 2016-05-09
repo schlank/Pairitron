@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:orientation="vertical"
+             tools:context=".TimerListActivity">
+
+    <Spinner
+        android:id="@+id/pair_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:entries="@array/pair_list"
+        android:padding="5dp"
+        android:prompt="@string/pair_prompt" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/activity_timer_timer_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pick Date"
+        android:onClick="showDatePickerDialog" />
+
+</LinearLayout>

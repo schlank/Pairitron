@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="timer_box_size">300dp</dimen>
+    <dimen name="icon_medium">24dp</dimen>
+    <dimen name="icon_medium_pressable">40dp</dimen>
+    <dimen name="icon_medium_pressable_padding">8dp</dimen>
+</resources>
