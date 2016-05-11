@@ -26,4 +26,16 @@
         <item>John Terrill</item>
         <item>Hexar Anderson</item>
     </string-array>
+
+    <string-array name="pair_state_list">
+        <item>Pairing</item>
+        <item>Driving</item>
+        <item>Directing</item>
+        <item>Watching</item>
+        <item>Pair Foosball</item>
+        <item>Pair ?</item>
+        <item>Pair on Laptop</item>
+        <item>Pair on Phone</item>
+        <item>Pair in Meeting</item>
+    </string-array>
 </resources>

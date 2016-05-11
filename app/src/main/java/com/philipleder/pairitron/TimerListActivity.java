@@ -39,7 +39,7 @@ public class TimerListActivity extends FragmentActivity {
 
     static final String TAG = TimerListActivity.class.getSimpleName();
     static final String DEFAULT_SAVE_FILENAME = "timerboxes";
-    static final int TIMER_BOX_COUNT = 6;
+    static final int TIMER_BOX_COUNT = 9;
 
     //endregion
 
@@ -70,7 +70,7 @@ public class TimerListActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timer_list);
+        setContentView(R.layout.activity_fullscreenz);
 
         addListenerOnSpinnerItemSelection();
 
@@ -86,11 +86,7 @@ public class TimerListActivity extends FragmentActivity {
             timerInfoList = loadFile();
         }
         if (timerInfoList == null || timerInfoList.size() == 0) {
-            timerInfoList = new ArrayList<>();
-            for (int i = 0; i < TIMER_BOX_COUNT; i++) {
-                TimerInfo timerInfo = new TimerInfo();
-                timerInfoList.add(timerInfo);
-            }
+            resetTimerInfoList();
         }
 
         float timerBoxSize = getResources().getDimension(R.dimen.timer_box_size);
@@ -111,14 +107,21 @@ public class TimerListActivity extends FragmentActivity {
 
         timerInfoList = loadFile();
         if (timerInfoList == null || timerInfoList.size() == 0) {
-            timerInfoList = new ArrayList<>();
-            for (int i = 0; i < TIMER_BOX_COUNT; i++) {
-                TimerInfo timerInfo = new TimerInfo();
-                timerInfoList.add(timerInfo);
-            }
+            resetTimerInfoList();
         }
         timerListAdapter = new TimerListAdapter(timerInfoList, getSupportFragmentManager());
         timerListRecycler.setAdapter(timerListAdapter);
+    }
+
+    private void resetTimerInfoList() {
+
+        String[] pairStateTitles = getResources().getStringArray(R.array.pair_state_list);
+        timerInfoList = new ArrayList<>();
+        for (String pairState : pairStateTitles) {
+            TimerInfo timerInfo = new TimerInfo();
+            timerInfo.header = pairState;
+            timerInfoList.add(timerInfo);
+        }
     }
 
     /**
@@ -266,6 +269,8 @@ public class TimerListActivity extends FragmentActivity {
     class CustomOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
 
         public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
+
+            saveFile();
 
             mPairString = parent.getItemAtPosition(pos).toString();
 
